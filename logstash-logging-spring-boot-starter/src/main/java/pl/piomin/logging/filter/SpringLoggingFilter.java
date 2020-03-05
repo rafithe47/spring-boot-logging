@@ -53,7 +53,6 @@ public class SpringLoggingFilter extends OncePerRequestFilter {
             }
             final long startTime = System.currentTimeMillis();
             final SpringRequestWrapper wrappedRequest = new SpringRequestWrapper(request);
-            wrappedRequest.setCharacterEncoding("UTF-8");
             if (logHeaders)
                 LOGGER.info("Request: method={}, uri={}, payload={}, headers={}, audit={}", wrappedRequest.getMethod(),
                         wrappedRequest.getRequestURI(), IOUtils.toString(wrappedRequest.getInputStream(),
